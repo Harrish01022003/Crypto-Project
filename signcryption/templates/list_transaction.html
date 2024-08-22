@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+{% block title %}List of Transaction{% endblock title %}
+{% block content %}
+<div>
+    <ul>
+        {% for transaction in transactions %}
+        <li>Transactio From {{transaction.user.username}} to {{transaction.reciever}}, Amount {{transaction.amount}} -- Status -> {{transaction.status}}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock content %}

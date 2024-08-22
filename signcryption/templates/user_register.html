@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+{% block title %}User Register{% endblock title %}
+{% block content %}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label>Username</label>
+    <input type="text" name="username" />
+    <label>Password</label>
+    <input type="password" name="password" />
+    <label>Vein Pattern</label>
+    <input type="file" name="file"/>
+    <button type="submit">Submit</button>
+</form>
+<p>Already have an account? <a href="{% url 'user_login' %}">Login</a></p>
+{% endblock content %}

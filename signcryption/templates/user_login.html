@@ -1,0 +1,13 @@
+{% extends 'main.html' %}
+{% block title %}Login{% endblock title %}
+{% block content %}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label>Username</label>
+    <input name="username" type="text" />
+    <label>Password</label>
+    <input name="password" type="password"/>
+    <button type="submit">Login</button>
+</form>
+<p>Don't Have an account? <a href="{% url 'user_register' %}">Register</a></p>
+{% endblock content %}
